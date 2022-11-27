@@ -47,21 +47,24 @@
                     const $this = $(this);
                     $this.next().slideToggle(500);
                 });
-            $("input").submit(function () {
-                const $this = $(this);
-                if ($this.attr("data-answer")) {
-                    if ($this.val().toLowerCase() === $this.attr("data-answer").toLowerCase()) {
-                        alert("答案正确！");
-                    } else {
-                        alert("答案错误");
+            $("input").keydown(function (e) {
+                if (e.key === "Enter") {
+                    const $this = $(this);
+                    // console.log($this);
+                    if ($this.attr("data-answer")) {
+                        if ($this.val().toLowerCase() === $this.attr("data-answer").toLowerCase()) {
+                            alert("答案正确！");
+                        } else {
+                            alert("答案错误");
+                        }
                     }
-                }
-                if ($this.attr("data-spj")) {
-                    const ans = $this.val();
-                    if (eval($this.attr("data-answer"))) {
-                        alert("答案正确！");
-                    } else {
-                        alert("答案错误");
+                    if ($this.attr("data-spj")) {
+                        const ans = $this.val();
+                        if (eval($this.attr("data-spj"))) {
+                            alert("答案正确！");
+                        } else {
+                            alert("答案错误");
+                        }
                     }
                 }
             });
@@ -176,13 +179,13 @@ closing_brace</pre>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1>来B站康康</h1>
-            <p>正在维护</p>
+            <!--            <p>正在维护</p>-->
         </div>
-        <!-- <div class="panel-body">
-            <iframe src="//player.bilibili.com/player.html?aid=728255398&bvid=BV1rS4y1E7oo&cid=769162776&page=1"
+        <div class="panel-body">
+            <iframe src="https://player.bilibili.com/player.html?aid=728255398&bvid=BV1rS4y1E7oo&cid=769162776&page=1"
                     class="img-thumbnail" style="aspect-ratio: 16/9; width: 100%; height: auto"
                     allowfullscreen></iframe>
-         </div> -->
+        </div>
     </div>
 
     <div class="panel panel-default">
@@ -212,7 +215,7 @@ closing_brace</pre>
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1>知识问答(暂时无法使用)</h1>
+            <h1>知识问答</h1>
         </div>
         <div class="panel-body">
             <div class="panel panel-default">
@@ -226,7 +229,7 @@ closing_brace</pre>
                                 问
                             </div>
                             <div class="form-control">
-                                125(十进制)的二进制是多少？
+                                125(10进制)的16进制是多少？
                             </div>
                         </div>
                     </div>
@@ -252,7 +255,7 @@ closing_brace</pre>
                                 问
                             </div>
                             <div class="form-control">
-                                答案是3或5
+                                15对哪个数取模等于0（答案不唯一）？
                             </div>
                         </div>
                     </div>
@@ -261,7 +264,7 @@ closing_brace</pre>
                             <div class="input-group-addon">
                                 答
                             </div>
-                            <input class="form-control" data-spj="ans == 3 || ans == 5">
+                            <input class="form-control" data-spj="ans == '3' || ans == '5' || ans == '15'">
                         </div>
                     </div>
                 </div>
@@ -270,7 +273,22 @@ closing_brace</pre>
         </div>
     </div>
     <hr>
-    <h1><b><span style="color: #FF0000">特别鸣谢：myworldzycpc, 拿起失乐园的屑CENSORED</span></b></h1>
+    <div class="panel panel-warning">
+
+        <div class="panel-heading">
+            <h2>制作人员</h2>
+        </div>
+        <div class="panel-body">
+            <span style="color: #000000">特别鸣谢：myworldzycpc, 拿起失乐园的屑CENSORED</span>
+            <hr>
+            <span style="color: #000000">代码：myworldzycpc, 拿起失乐园的屑CENSORED</span>
+            <hr>
+            <span style="color: #000000">策划：myworldzycpc, 拿起失乐园的屑CENSORED</span>
+            <hr>
+            <span style="color: #000000">主编：myworldzycpc, 拿起失乐园的屑CENSORED</span>
+        </div>
+    </div>
+
 </div>
 
 </body>
