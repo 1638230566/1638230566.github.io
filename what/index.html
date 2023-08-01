@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DataErr0r</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>知识问答</title>
+    <script>
+        $(function () {
+            $("input").keydown(function (e) {
+                if (e.key === "Enter") {
+                    const $this = $(this);
+                    // console.log($this);
+                    if ($this.attr("data-answer")) {
+                        if ($this.val().toLowerCase() === $this.attr("data-answer").toLowerCase()) {
+                            alert("答案正确！");
+                        } else {
+                            alert("答案错误");
+                        }
+                    }
+                    if ($this.attr("data-spj")) {
+                        const ans = $this.val();
+                        if (eval($this.attr("data-spj"))) {
+                            alert("答案正确！");
+                        } else {
+                            alert("答案错误");
+                        }
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> DataErr0r</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="navBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home/">首页</a></li>
+                    <li><a href="/about/">关于我们</a></li>
+                    <li><a href="/blog/">博客</a></li>
+                    <li><a href="/what/">知识问答</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1>知识问答</h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>知识问答</h1>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    问题 1
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                问
+                            </div>
+                            <div class="form-control">
+                                125(10进制)的16进制是多少？
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                答
+                            </div>
+                            <input class="form-control" data-answer="7d">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    问题 2
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                问
+                            </div>
+                            <div class="form-control">
+                                想要清屏要写system("?");("中写什么")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                答
+                            </div>
+                            <input class="form-control" data-spj="ans == 'cls'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

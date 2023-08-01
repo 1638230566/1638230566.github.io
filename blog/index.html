@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DataErr0r</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>博客索引</title>
+    <style>
+        .one-blog {
+            box-shadow: 1px 1px 5px black;
+            border-radius: 5px;
+            padding: 20px;
+            user-select: none;
+            transition: 0.2s;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .one-blog:hover {
+            transform: scale(1.01);
+        }
+
+        .one-blog:active {
+            transform: scale(0.99);
+            filter: brightness(0.9);
+        }
+
+        .time {
+            padding-left: 10px;
+            color: grey;
+        }
+
+        .desc {
+            padding-left: 10px;
+        }
+
+        .corner {
+            float: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> DataErr0r</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="navBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home/">首页</a></li>
+                    <li><a href="/about/">关于我们</a></li>
+                    <li><a href="/blog/">博客</a></li>
+                    <li><a href="/what/">知识问答</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1>博客索引</h1>
+    </div>
+    <div class="one-blog" onclick="location.href='P1598 垂直柱状图.html'">
+        <div class="corner"><a class="btn btn-default">题解</a></div>
+        <div class="title">
+            <h1>P1958 垂直柱状图 题解</h1>
+            <p class="time">2023-07-22 18:23:11</p>
+        </div>
+        <div class="desc">网站翻新后的第一篇博客</div>
+    </div>
+</div>
+</body>
+</html>

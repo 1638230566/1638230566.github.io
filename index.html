@@ -2,304 +2,209 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DataErr0r</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>拿起失乐园的屑CENSORED</title>
-    <!--上面是网页的标题，这里是注释-->
     <style>
+        .errorlist {
+            color: red;
+        }
 
-        #pageHead {
-            background-image: url("static/你是个倒霉蛋.jpg");
-            background-position: center;
+        html {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("static/MC背景图.png");
             background-size: cover;
-
+            background-position: right;
         }
 
-        #headImage {
-            /*mix-blend-mode: multiply;*/
+        .allInOne {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-image: url("static/虚化背景图.png");
+            background-size: cover;
+            background-position: right;
         }
 
-        #headBox {
-            text-align: right;
-            height: 0;
+        .box {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            background-color: #80808080;
+            margin-top: 200px;
         }
 
-        .collAble {
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #3498db;
+            opacity: 0;
+            transition: opacity 1s ease-out, transform 1s ease-in;
+        }
+
+        .box.open {
+            width: 330px;
+            transition: width 1s ease-out;
+        }
+
+        .box.open {
+            height: 330px;
+            transition: height 1s ease-in;
+            transition-delay: 1s;
+        }
+
+        .box.open .content {
+            opacity: 1;
+            transition-delay: 3s;
+        }
+
+        .stateMachineBox {
+            width: 100px;
+            height: 100px;
+            background-color: #0080ff;
+            line-height: 10%;
+            text-align: center;
+            padding: 5px;
+            color: white;
+            user-select: none;
             cursor: pointer;
+            transition: 0.2s;
+            border-radius: 5px;
+        }
+
+        .stateMachineBox:hover {
+            box-shadow: 0 0 20px white;
+            transform: scale(1.05);
             transition: 0.2s;
         }
 
-        .collAble:active {
-            filter: brightness(0.9);
+        .stateMachineBox:active {
+            transform: scale(0.9);
+            transition: 0.1s;
+            filter: brightness(0.8);
         }
 
+        .stayTuned {
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #808080;
+            text-align: center;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        .mContainer {
+            perspective: 800px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            font-size: 48px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .text {
+
+            font-size: 200px;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+
+            animation: flyIn 2s forwards;
+        }
+
+        @keyframes flyIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) translateZ(800px) rotateY(0) translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) translateZ(0) rotateY(1080deg) translateY(-100px);
+            }
+        }
     </style>
     <script>
         $(function () {
-            $(".collAble")
-                .each(function () {
-                    const $this = $(this);
-                    $this.next().slideToggle(0);
-                })
-                .click(function () {
-                    const $this = $(this);
-                    $this.next().slideToggle(500);
+            const $box = $(".box");
+            setTimeout(function () {
+                $box.fadeIn(200).css({
+                    "width": "230px",
+                    "transition": "0.5s ease-in"
                 });
-            $("input").keydown(function (e) {
-                if (e.key === "Enter") {
-                    const $this = $(this);
-                    // console.log($this);
-                    if ($this.attr("data-answer")) {
-                        if ($this.val().toLowerCase() === $this.attr("data-answer").toLowerCase()) {
-                            alert("答案正确！");
-                        } else {
-                            alert("答案错误");
-                        }
-                    }
-                    if ($this.attr("data-spj")) {
-                        const ans = $this.val();
-                        if (eval($this.attr("data-spj"))) {
-                            alert("答案正确！");
-                        } else {
-                            alert("答案错误");
-                        }
-                    }
-                }
-            });
+                setTimeout(function () {
+                    $box.css({
+                        "height": "120px",
+                        "transition": "0.5s ease-out"
+                    });
+                    setTimeout(function () {
+                        $(".box .content").css({'opacity': '1', 'transition': '0.2s'});
+                    }, 500);
+                }, 500);
+            }, 2000);
         });
     </script>
-    <!-- script里的是网页脚本(JavaScript) -->
 </head>
 <body>
-
-<div class="container">
-    <br>
-    <div class="jumbotron" id="pageHead">
-        <div id="headBox"><img src="static/谢灵鸽.png" alt="谢灵鸽" id="headImage"></div>
-        <h1>拿起失乐园的屑CENSORED</h1>
-        <p style="color: deepskyblue;">李泽轩！！</p>
-    </div>
-    <p>向下滑康康我整活</p>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2>整活</h2>
+<nav class="navbar navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> DataErr0r</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="navBar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home/">首页</a></li>
+                    <li><a href="/about/">关于我们</a></li>
+                    <li><a href="/blog/">博客</a></li>
+                    <li><a href="/what/">知识问答</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="panel-body">
-            <div class="panel panel-default">
-                <div class="panel-heading collAble">
-                    YBT1099.第n小的质数
-                </div>
-                <div class="panel-body">
-                    <pre>
-#define header_file &lt;bits/stdc++.h>
-#include header_file
-#define macro_definition typedef
-#define semicolon ;
-#define inaugurate using
-#define newq namespace
-#define memory_space std
-#define long_definition long
-#define definition int
-#define main_functions main
-#define opening_parenthesis (
-#define closing_parenthesis )
-#define left_brace {
-#define closing_brace }
-#define input cin
-#define left_corner_number <<
-#define right_corner_number >>
-#define circulate for
-#define equal_sign =
-#define plus +
-#define boolean bool
-#define real true
-#define greater_than1 <
-#define less_than >
-#define less_than_or_equal_to <=
-#define greater_than_or_equal_to >=
-#define evolution sqrt
-#define judgment if
-#define take_the_balance %
-#define is_equal_to ==
-#define fake false
-#define quit break
-#define output cout
-#define line_breaks endl
-#define self_reduction --
-#define back return
-#define variable1 ll
-#define variable2 i
-#define variable3 j
-#define add_yourself ++
-#define variable4 jube
-#define variable5 n
-#define num1 0
-#define num2 2
-#define num3 3
-
-inaugurate newq memory_space semicolon
-macro_definition long_definition long_definition variable1 semicolon
-definition main_functions opening_parenthesis closing_parenthesis left_brace
-variable1 variable5 semicolon
-input right_corner_number variable5 semicolon
-variable5 self_reduction semicolon
-circulate opening_parenthesis variable1 variable2 equal_sign num3 semicolon semicolon variable2 equal_sign num2 plus variable2 closing_parenthesis left_brace
-boolean variable4 equal_sign real semicolon
-circulate opening_parenthesis variable1 variable3 equal_sign num2 semicolon variable3 less_than_or_equal_to evolution opening_parenthesis variable2 closing_parenthesis semicolon variable3 add_yourself closing_parenthesis left_brace
-judgment opening_parenthesis variable2 take_the_balance variable3 is_equal_to num1 closing_parenthesis left_brace
-variable4 equal_sign fake semicolon
-quit semicolon
-closing_brace
-closing_brace
-judgment opening_parenthesis variable4 closing_parenthesis left_brace
-variable5 self_reduction semicolon
-judgment opening_parenthesis variable5 is_equal_to num1 closing_parenthesis left_brace
-output left_corner_number variable2 left_corner_number line_breaks semicolon
-quit semicolon
-closing_brace
-closing_brace
-closing_brace
-back num1 semicolon
-closing_brace</pre>
-                </div>
+    </nav>
+</nav>
+<div class="allInOne">
+    <div class="mContainer">
+        <div class="text">DataErr0r</div>
+    </div>
+    <div class="box" style="display: none">
+        <div class="content">
+            <div class="stateMachineBox" onclick="$('body *').fadeOut();location.href=`home/`">
+                <p style="margin-top: 20px"><span>首页</span></p>
+                <p><img src="static/home.svg" alt="首页图标" style="filter: invert(100%);height: 60px"></p>
+            </div>
+            <div class="stayTuned">
+                <span>敬请期待</span>
             </div>
         </div>
     </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1>来B站康康</h1>
-            <!--            <p>正在维护</p>-->
-        </div>
-        <div class="panel-body">
-            <iframe src="https://player.bilibili.com/player.html?aid=728255398&bvid=BV1rS4y1E7oo&cid=769162776&page=1"
-                    class="img-thumbnail" style="aspect-ratio: 16/9; width: 100%; height: auto"
-                    allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1><b>最“新”视屏<b/></h1>
-            <!--            <p>正在维护</p>-->
-        </div>
-        <div class="panel-body">
-            <iframe src="https://player.bilibili.com/player.html?aid=484767980&bvid=BV1TT411W72c&cid=1090465364&page=1"
-                    class="img-thumbnail" style="aspect-ratio: 16/9; width: 100%; height: auto"
-                    allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1>大家一起来哼歌</h1>
-        </div>
-        <div class="panel-body">
-            <h4>听我说谢谢你...</h4>
-        </div>
-
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2>计算器</h2>
-        </div>
-        <div class="panel-body">
-            <div class="hidden-sm hidden-xs">
-                <iframe src="计算器/index.html" class="img-thumbnail"
-                        style="aspect-ratio: 16/9; width: 100%; height: auto" allowfullscreen></iframe>
-            </div>
-            <div class="visible-sm visible-xs">
-                <a href="./计算器" class="btn btn-primary btn-block">点击打开计算器</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1>知识问答</h1>
-        </div>
-        <div class="panel-body">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    问题 1
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                问
-                            </div>
-                            <div class="form-control">
-                                125(10进制)的16进制是多少？
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                答
-                            </div>
-                            <input class="form-control" data-answer="7d">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    问题 2
-                </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                问
-                            </div>
-                            <div class="form-control">
-                                想要清屏要写system("?");("中写什么")
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                答
-                            </div>
-                            <input class="form-control" data-spj="ans == 'cls'">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?cec5e45542bccd144ca87f3279381e23";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <hr>
-    <div class="panel panel-warning">
-
-        <div class="panel-heading">
-            <h2>制作人员</h2>
-        </div>
-        <div class="panel-body">
-            <span style="color: #000000">特别鸣谢：拿起失乐园的屑CENSORED</span>
-            <hr>
-            <span style="color: #000000">代码：拿起失乐园的屑CENSORED</span>
-            <hr>
-            <span style="color: #000000">策划：拿起失乐园的屑CENSORED</span>
-            <hr>
-            <span style="color: #000000">主编： 拿起失乐园的屑CENSORED</span>
-        </div>
-    </div>
-
 </div>
-
 </body>
+</html>
