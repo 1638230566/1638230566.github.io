@@ -49,6 +49,7 @@
             position: relative;
             background-color: #80808080;
             margin-top: 200px;
+            padding: 10px;
         }
 
         .content {
@@ -80,7 +81,7 @@
             transition-delay: 3s;
         }
 
-        .stateMachineBox {
+        .clickBox {
             width: 100px;
             height: 100px;
             background-color: #0080ff;
@@ -92,15 +93,16 @@
             cursor: pointer;
             transition: 0.2s;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
-        .stateMachineBox:hover {
+        .clickBox:hover {
             box-shadow: 0 0 20px white;
             transform: scale(1.05);
             transition: 0.2s;
         }
 
-        .stateMachineBox:active {
+        .clickBox:active {
             transform: scale(0.9);
             transition: 0.1s;
             filter: brightness(0.8);
@@ -110,10 +112,10 @@
             border-radius: 5px;
             width: 100px;
             height: 100px;
-            border: 2px dashed #808080;
+            border: 2px dashed #F4A261;
+            color: #F4A261;
             text-align: center;
             padding: 5px;
-            margin-left: 10px;
         }
 
         .mContainer {
@@ -151,7 +153,7 @@
             const $box = $(".box");
             setTimeout(function () {
                 $box.fadeIn(200).css({
-                    "width": "230px",
+                    "width": "560px",
                     "transition": "0.5s ease-in"
                 });
                 setTimeout(function () {
@@ -196,9 +198,21 @@
     </div>
     <div class="box" style="display: none">
         <div class="content">
-            <div class="stateMachineBox" onclick="$('body *').fadeOut();location.href=`home/`">
+            <div class="clickBox" style="background-color: #E63946" onclick="$('body *').fadeOut();location.href=`/home/`">
                 <p style="margin-top: 20px"><span>首页</span></p>
                 <p><img src="static/home.svg" alt="首页图标" style="filter: invert(100%);height: 60px"></p>
+            </div>
+            <div class="clickBox" style="background-color: #457B9D" onclick="$('body *').fadeOut();location.href=`/about/`">
+                <p style="margin-top: 20px"><span>关于我们</span></p>
+                <p><img src="static/about.svg" alt="关于图标" style="filter: invert(100%);height: 60px"></p>
+            </div>
+            <div class="clickBox" style="background-color: #2A9D8F" onclick="$('body *').fadeOut();location.href=`/blog/`">
+                <p style="margin-top: 20px"><span>博客</span></p>
+                <p style="margin-top: 16px"><img src="static/blog.svg" alt="博客图标" style="filter: invert(100%);height: 50px"></p>
+            </div>
+            <div class="clickBox" style="background-color: #E9C46A" onclick="$('body *').fadeOut();location.href=`/what/`">
+                <p style="margin-top: 20px"><span>知识问答</span></p>
+                <p style="margin-top: 16px"><img src="static/what.svg" alt="知识问答图标" style="filter: invert(100%);height: 50px"></p>
             </div>
             <div class="stayTuned">
                 <span>敬请期待</span>
