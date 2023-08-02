@@ -153,7 +153,7 @@
             const $box = $(".box");
             setTimeout(function () {
                 $box.fadeIn(200).css({
-                    "width": "560px",
+                    "width": "670px",
                     "transition": "0.5s ease-in"
                 });
                 setTimeout(function () {
@@ -184,9 +184,29 @@
             <div class="collapse navbar-collapse navbar-right" id="navBar">
                 <ul class="nav navbar-nav">
                     <li><a href="/home/">首页</a></li>
-                    <li><a href="/about/">关于我们</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            关于我们<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/about/"><b>关于</b></a></li>
+                            <li><a href="/about/Privacy%20Policy">隐私政策</a></li>
+                            <li><a href="/about/Terms%20of%20Service">服务条款</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/blog/">博客</a></li>
                     <li><a href="/what/">知识问答</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            分区<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/partition/"><b>分区索引</b></a></li>
+                            <li><a href="/partition/maths/">数学分区</a></li>
+                            <li><a href="/partition/games/">游戏分区</a></li>
+                            <li><a href="/partition/OI/">OI分区</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -208,11 +228,18 @@
             </div>
             <div class="clickBox" style="background-color: #2A9D8F" onclick="$('body *').fadeOut();location.href=`/blog/`">
                 <p style="margin-top: 20px"><span>博客</span></p>
-                <p style="margin-top: 16px"><img src="static/blog.svg" alt="博客图标" style="filter: invert(100%);height: 50px"></p>
+                <p style="margin-top: 16px">
+                    <img src="static/blog.svg" alt="博客图标" style="filter: invert(100%);height: 50px"></p>
             </div>
             <div class="clickBox" style="background-color: #E9C46A" onclick="$('body *').fadeOut();location.href=`/what/`">
                 <p style="margin-top: 20px"><span>知识问答</span></p>
-                <p style="margin-top: 16px"><img src="static/what.svg" alt="知识问答图标" style="filter: invert(100%);height: 50px"></p>
+                <p style="margin-top: 16px">
+                    <img src="static/what.svg" alt="知识问答图标" style="filter: invert(100%);height: 50px"></p>
+            </div>
+            <div class="clickBox" style="background-color: #808080" onclick="$('body *').fadeOut();location.href=`/partition/`">
+                <p style="margin-top: 20px"><span>分区</span></p>
+                <p style="margin-top: 16px">
+                    <img src="static/.svg" alt="图标" style="filter: invert(100%);height: 50px"></p>
             </div>
             <div class="stayTuned">
                 <span>敬请期待</span>

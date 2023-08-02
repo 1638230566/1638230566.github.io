@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>博客索引</title>
+    <title>分区索引</title>
     <style>
         .one-blog {
             box-shadow: 1px 1px 5px black;
             border-radius: 5px;
-            padding: 20px;
+            padding: 0.1px 20px 20px;
             user-select: none;
             transition: 0.2s;
             cursor: pointer;
             background-color: #fff;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .one-blog:hover {
@@ -105,23 +106,25 @@
 <div class="container">
     <br>
     <div class="jumbotron">
-        <h1>博客索引</h1>
+        <h1>分区索引</h1>
     </div>
-    <div class="one-blog" onclick="location.href='P1598 垂直柱状图.html'">
-        <div class="corner"><a class="btn btn-default">题解</a></div>
+    <div class="one-blog" onclick="location.href='maths'" style="background-color: #ADD8E6; border: 3px solid #00008B">
         <div class="title">
-            <h1>P1958 垂直柱状图 题解</h1>
-            <p class="time">2023-07-22 18:23:11</p>
+            <h1>maths</h1>
         </div>
-        <div class="desc">网站翻新后的第一篇博客</div>
+        <div class="desc">数学虐我千百遍,我待数学如初恋</div>
     </div>
-    <div class="one-blog" onclick="location.href='P1957 口算练习题.html'">
-        <div class="corner"><a class="btn btn-default">题解</a></div>
+    <div class="one-blog" onclick="location.href='games'" style="background-color: #90EE90; border: 3px solid #006400">
         <div class="title">
-            <h1>P1957 口算练习题</h1>
-            <p class="time">2023-07-18 17:14:09</p>
+            <h1>games</h1>
         </div>
-        <div class="desc">第二篇博客捏</div>
+        <div class="desc">你十七张牌能秒我?</div>
+    </div>
+    <div class="one-blog" onclick="location.href='OI'" style="background-color: #DDA0DD; border: 3px solid #800080">
+        <div class="title">
+            <h1>OI</h1>
+        </div>
+        <div class="desc">十年OI一场空,不开long long见祖宗</div>
     </div>
 </div>
 </body>

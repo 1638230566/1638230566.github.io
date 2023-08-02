@@ -10,6 +10,41 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>关于我们</title>
     <style>
+        .one-blog {
+            box-shadow: 1px 1px 5px black;
+            border-radius: 5px;
+            padding: 0.1px 20px 20px;
+            user-select: none;
+            transition: 0.2s;
+            cursor: pointer;
+            background-color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .one-blog:hover {
+            transform: scale(1.01);
+        }
+
+        .one-blog:active {
+            transform: scale(0.99);
+            filter: brightness(0.9);
+        }
+
+        .time {
+            padding-left: 10px;
+            color: grey;
+        }
+
+        .desc {
+            padding-left: 10px;
+        }
+
+        .corner {
+            float: right;
+            margin-top: 20px;
+        }
+
         .background {
             position: fixed;
             left: 0;
@@ -40,9 +75,29 @@
             <div class="collapse navbar-collapse navbar-right" id="navBar">
                 <ul class="nav navbar-nav">
                     <li><a href="/home/">首页</a></li>
-                    <li><a href="/about/">关于我们</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            关于我们<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/about/"><b>关于</b></a></li>
+                            <li><a href="/about/Privacy%20Policy">隐私政策</a></li>
+                            <li><a href="/about/Terms%20of%20Service">服务条款</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/blog/">博客</a></li>
                     <li><a href="/what/">知识问答</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            分区<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/partition/"><b>分区索引</b></a></li>
+                            <li><a href="/partition/maths/">数学分区</a></li>
+                            <li><a href="/partition/games/">游戏分区</a></li>
+                            <li><a href="/partition/OI/">OI分区</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -68,10 +123,26 @@
             <hr>
             <span style="color: #000000">技术支持：myworldzycpc</span>
             <hr>
-            <p><a href="/static/MC背景图.png" class="btn btn-primary">首页图片</a> 是我们从bilibili上找到的,为了美观我们删除了水印,如有侵权联系<a href="mailto:1638230566@qq.com">李泽轩</a>或是<a href="mailto:myworldzhangyichen@qq.com">myworldzycpc</a>,我们收到回立即修改的!</p>
+            <p><a href="/static/MC背景图.png" class="btn btn-primary">首页图片</a> 是我们从bilibili上找到的,为了美观我们删除了水印,如有侵权联系<a href="mailto:1638230566@qq.com">李泽轩</a>或是<a href="mailto:myworldzhangyichen@qq.com">myworldzycpc</a>,我们收到会立即修改的!</p>
             <hr>
             <h3>注:上方链接可能被360截胡,如果出现此情况请复制电子邮件链接!</h3>
         </div>
+    </div>
+
+    <div class="one-blog" onclick="location.href='Privacy Policy'" style="background-color: #E0E0E0; border: 3px solid #808080">
+        <div class="corner"></div>
+        <div class="title">
+            <h1>隐私政策</h1>
+        </div>
+        <div class="desc">新人必看</div>
+    </div>
+
+    <div class="one-blog" onclick="location.href='Terms of Service'" style="background-color: #ffffff; border: 3px solid #E0E0E0">
+        <div class="corner"></div>
+        <div class="title">
+            <h1>服务条款</h1>
+        </div>
+        <div class="desc">新人必看 * 2</div>
     </div>
 </div>
 </body>

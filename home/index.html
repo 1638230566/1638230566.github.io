@@ -81,9 +81,29 @@
             <div class="collapse navbar-collapse navbar-right" id="navBar">
                 <ul class="nav navbar-nav">
                     <li><a href="/home/">首页</a></li>
-                    <li><a href="/about/">关于我们</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            关于我们<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/about/"><b>关于</b></a></li>
+                            <li><a href="/about/Privacy%20Policy">隐私政策</a></li>
+                            <li><a href="/about/Terms%20of%20Service">服务条款</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/blog/">博客</a></li>
                     <li><a href="/what/">知识问答</a></li>
+                    <li class="dropdown">
+                        <a href="/partition/" class="dropdown-toggle" data-toggle="dropdown">
+                            分区<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/partition/"><b>分区索引</b></a></li>
+                            <li><a href="/partition/maths/">数学分区</a></li>
+                            <li><a href="/partition/games/">游戏分区</a></li>
+                            <li><a href="/partition/OI/">OI分区</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -96,91 +116,6 @@
         <h1>DataErr0r</h1>
     </div>
     <div class="alert alert-warning">2023年8月1日我的网站大改你知道吗</div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2>整活</h2>
-        </div>
-        <div class="panel-body">
-            <div class="panel panel-default">
-                <div class="panel-heading collAble">
-                    YBT1099.第n小的质数
-                </div>
-                <div class="panel-body">
-                    <pre>
-#define header_file &lt;bits/stdc++.h>
-#include header_file
-#define macro_definition typedef
-#define semicolon ;
-#define inaugurate using
-#define newq namespace
-#define memory_space std
-#define long_definition long
-#define definition int
-#define main_functions main
-#define opening_parenthesis (
-#define closing_parenthesis )
-#define left_brace {
-#define closing_brace }
-#define input cin
-#define left_corner_number <<
-#define right_corner_number >>
-#define circulate for
-#define equal_sign =
-#define plus +
-#define boolean bool
-#define real true
-#define greater_than1 <
-#define less_than >
-#define less_than_or_equal_to <=
-#define greater_than_or_equal_to >=
-#define evolution sqrt
-#define judgment if
-#define take_the_balance %
-#define is_equal_to ==
-#define fake false
-#define quit break
-#define output cout
-#define line_breaks endl
-#define self_reduction --
-#define back return
-#define variable1 ll
-#define variable2 i
-#define variable3 j
-#define add_yourself ++
-#define variable4 jube
-#define variable5 n
-#define num1 0
-#define num2 2
-#define num3 3
-
-inaugurate newq memory_space semicolon
-macro_definition long_definition long_definition variable1 semicolon
-definition main_functions opening_parenthesis closing_parenthesis left_brace
-variable1 variable5 semicolon
-input right_corner_number variable5 semicolon
-variable5 self_reduction semicolon
-circulate opening_parenthesis variable1 variable2 equal_sign num3 semicolon semicolon variable2 equal_sign num2 plus variable2 closing_parenthesis left_brace
-boolean variable4 equal_sign real semicolon
-circulate opening_parenthesis variable1 variable3 equal_sign num2 semicolon variable3 less_than_or_equal_to evolution opening_parenthesis variable2 closing_parenthesis semicolon variable3 add_yourself closing_parenthesis left_brace
-judgment opening_parenthesis variable2 take_the_balance variable3 is_equal_to num1 closing_parenthesis left_brace
-variable4 equal_sign fake semicolon
-quit semicolon
-closing_brace
-closing_brace
-judgment opening_parenthesis variable4 closing_parenthesis left_brace
-variable5 self_reduction semicolon
-judgment opening_parenthesis variable5 is_equal_to num1 closing_parenthesis left_brace
-output left_corner_number variable2 left_corner_number line_breaks semicolon
-quit semicolon
-closing_brace
-closing_brace
-closing_brace
-back num1 semicolon
-closing_brace</pre>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -212,18 +147,6 @@ closing_brace</pre>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1>phigros专区</h1>
-        </div>
-        <div class="panel-body">
-            <h4>你或许也注意到了这件事</h4>
-            <h4>旅船是掩盖未来的虚影,战车正指引着我们的命运</h4>
-            <h4>硬币掷出之后,正逆的转换未曾停止</h4>
-            <h4>前方是毁灭,亦是重生</h4>
-            <div class="alert alert-warning">你知道我最爱听混乱-Confusions吗?</div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
             <h1>我常活跃的平台</h1>
         </div>
         <div class="panel-body">
@@ -247,8 +170,6 @@ closing_brace</pre>
             </div>
         </div>
     </div>
-
-
     <script>
         var _hmt = _hmt || [];
         (function () {
