@@ -56,6 +56,13 @@
             background-size: cover;
             background-position: right;
         }
+
+        mark {
+            background-color: rgba(0,128,255,0.5);
+            border-bottom: none;
+            border-radius: 5px;
+            padding: 2px 5px;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +104,55 @@
     <div class="jumbotron">
         <h1>数学专区</h1>
     </div>
-
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>计算器</h2>
+        </div>
+        <div class="panel-body">
+            <div class="hidden-sm hidden-xs">
+                <iframe src="/计算器/index.html" class="img-thumbnail"
+                        style="aspect-ratio: 16/9; width: 100%; height: auto" allowfullscreen></iframe>
+            </div>
+            <div class="visible-sm visible-xs">
+                <a href="/计算器" class="btn btn-primary btn-block">点击打开计算器</a>
+            </div>
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    按键映射
+                </div>
+                <table class="table text-center">
+                    <tr><th class="text-center">按键</th><th class="text-center">说明</th></tr>
+                    <tr><td>T</td><td>输入模式（进入输入模式后，可以按Esc返回按键模式）</td></tr>
+                    <tr><td>Esc</td><td>AC/退出输入模式进入按键模式</td></tr>
+                    <tr><td>a</td><td>abs</td></tr>
+                    <tr><td>@</td><td>sqrt √</td></tr>
+                    <tr><td>[</td><td>floor</td></tr>
+                    <tr><td>]</td><td>ceil</td></tr>
+                    <tr><td>r</td><td>round</td></tr>
+                    <tr><td>i</td><td>Infinity ∞</td></tr>
+                    <tr><td>n</td><td>NaN ∦</td></tr>
+                    <tr><td>u</td><td>undefined ⊘</td></tr>
+                    <tr><td>l</td><td>=&gt;</td></tr>
+                    <tr><td>L</td><td>λ</td></tr>
+                    <tr><td>s</td><td>sin</td></tr>
+                    <tr><td>S</td><td>sin<sup>-1</sup></td></tr>
+                    <tr><td>c</td><td>cos</td></tr>
+                    <tr><td>C</td><td>cos<sup>-1</sup></td></tr>
+                    <tr><td>d</td><td>tan</td></tr>
+                    <tr><td>D</td><td>tan<sup>-1</sup></td></tr>
+                    <tr><td>o</td><td>min</td></tr>
+                    <tr><td>O</td><td>max</td></tr>
+                    <tr><td>m</td><td>sum Σ</td></tr>
+                    <tr><td>e</td><td>e</td></tr>
+                    <tr><td>E</td><td>exp</td></tr>
+                    <tr><td>g</td><td>log</td></tr>
+                    <tr><td>G</td><td>ln</td></tr>
+                    <tr><td>R</td><td>rand 🎲</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1>敬请期待更多专区！</h1>
