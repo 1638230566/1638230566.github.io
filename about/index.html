@@ -13,13 +13,12 @@
         .one-blog {
             box-shadow: 1px 1px 5px black;
             border-radius: 5px;
-            padding: 0.1px 20px 20px;
+            padding: 20px;
             user-select: none;
             transition: 0.2s;
             cursor: pointer;
             background-color: #fff;
             margin-bottom: 20px;
-            text-align: center;
         }
 
         .one-blog:hover {
@@ -52,11 +51,34 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-image: url("../static/虚化背景图.png");
+            background-image: url("/static/虚化背景图.png");
             background-size: cover;
             background-position: right;
         }
+
+        .collAble {
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .collAble:active {
+            filter: brightness(0.9);
+        }
     </style>
+    <script>
+        $(function () {
+            $(".collAble")
+                .each(function () {
+                    const $this = $(this);
+                    $this.next().slideToggle(0);
+                })
+                .click(function () {
+                    const $this = $(this);
+                    $this.next().slideToggle(500);
+                });
+
+        });
+    </script>
 </head>
 <body>
 <div class="background"></div>
@@ -123,12 +145,44 @@
             <hr>
             <span style="color: #000000">技术支持：myworldzycpc</span>
             <hr>
-            <p><a href="/static/MC背景图.png" class="btn btn-primary">首页图片</a> 是我们从bilibili上找到的,为了美观我们删除了水印,如有侵权联系<a href="mailto:1638230566@qq.com">李泽轩</a>或是<a href="mailto:myworldzhangyichen@qq.com">myworldzycpc</a>,我们收到会立即修改的!</p>
+            <p><a href="/static/MC背景图.png" class="btn btn-primary">首页图片</a>
+                是我们从bilibili上找到的,为了美观我们删除了水印,如有侵权联系<a href="mailto:1638230566@qq.com">李泽轩</a>或是<a href="mailto:myworldzhangyichen@qq.com">myworldzycpc</a>,我们收到会立即修改的!
+            </p>
             <hr>
             <h3>注:上方链接可能被360截胡,如果出现此情况请复制电子邮件链接!</h3>
         </div>
     </div>
-
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>我常活跃的平台</h1>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://space.bilibili.com/672178840?spm_id_from=333.1007.0.0">我小破站的账号</a>
+                </li>
+                <li class="list-group-item"><a href="https://www.luogu.com.cn/user/1031647">我洛谷上的账号</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading collAble">
+            <h1>来B站康康我的视屏吧</h1>
+        </div>
+        <div class="panel-body">
+            <iframe src="//player.bilibili.com/player.html?aid=828743615&bvid=BV1Zu4y1m7Yq&cid=1204401819&page=1"
+                    class="img-thumbnail" style="aspect-ratio: 16/9; width: 100%; height: auto"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="panel-heading collAble">
+            <h1><b>最“新”视屏</b></h1>
+            <!--            <p>正在维护</p>-->
+        </div>
+        <div class="panel-body">
+            <iframe src="//player.bilibili.com/player.html?aid=488767722&bvid=BV1hN411e7Ba&cid=1209304635&page=1"
+                    class="img-thumbnail" style="aspect-ratio: 16/9; width: 100%; height: auto"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
     <div class="one-blog" onclick="location.href='Privacy Policy'" style="background-color: #E0E0E0; border: 3px solid #808080">
         <div class="corner"></div>
         <div class="title">
